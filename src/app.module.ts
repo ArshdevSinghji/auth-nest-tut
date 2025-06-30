@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from './data-source';
 import { AuthModule } from './auth/auth.module';
@@ -16,7 +14,5 @@ import { HashModule } from './hash/hash.module';
     AuthModule,
     HashModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
