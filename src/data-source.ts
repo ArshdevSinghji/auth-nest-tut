@@ -13,7 +13,7 @@ export const dataSourceOptions = {
   database: process.env.DB_DATABASE,
   entities: [User],
   synchronize: true,
-  logging: true,
+  logging: false,
 } as DataSourceOptions;
 
 export const dataSource = new DataSource(dataSourceOptions);
