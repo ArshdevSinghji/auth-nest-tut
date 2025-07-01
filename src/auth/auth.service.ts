@@ -1,7 +1,7 @@
 import {
+  BadRequestException,
   Injectable,
   NotFoundException,
-  UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { HashService } from 'src/hash/hash.service';
@@ -25,7 +25,7 @@ export class AuthService {
       user?.password,
     );
 
-    if (!isMatch) throw new UnauthorizedException("credentails don't match!");
+    if (!isMatch) throw new BadRequestException("credentials don't match!");
 
     const payload = { userId: user.id, email: user.email };
 
